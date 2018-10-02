@@ -1,4 +1,4 @@
-# Futhark
+# Futhark docker image
 
 If you would like to learn more about Futhark, please visit https://futhark-lang.org/.
 
@@ -6,7 +6,7 @@ If you would like to learn more about Futhark, please visit https://futhark-lang
 
 A Docker image containing compiled Futhark. The image is based on the official haskell image and contains only compiled binaries (in `/root/.local/bin`)
 
-I created the image to use for local development on a CPU. I am not sure how this would deal with a compilation for GPU.
+I created the image to use for local development on a CPU when working on my homework. I am not sure how this would deal with a compilation for GPU.
 
 ## How do I use it?
 
