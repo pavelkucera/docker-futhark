@@ -2,8 +2,9 @@ FROM haskell:8.4.3 AS build
 
 ARG VERSION=v0.7.1
 
-RUN apt-get update
-RUN apt-get install -y git
+RUN apt-get update && \
+	apt-get install -y \
+		git
 
 WORKDIR /futhark
 
