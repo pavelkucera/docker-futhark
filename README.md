@@ -10,9 +10,17 @@ I created the image to use for local development on a CPU when working on my hom
 
 ## How do I use it?
 
-I am using bash aliases such as:
+I am using bash functions/aliases such as:
 ```
-alias dockerfuthark="docker run --rm -it -v $PWD:/app -w /app pavelkucera/futhark"
-alias futharki="dockerfuthark futharki"
+function dockerfuthark() {
+    docker run --rm -it -v $PWD:/app -w /app pavelkucera/futhark $*
+}
+
+alias futhark="dockerfuthark futhark"
 alias futhark-test="dockerfuthark futhark-test"
+alias futharki="dockerfuthark futharki"
+alias futhark-dataset="dockerfuthark futhark-dataset"
+alias futhark-bench="dockerfuthark futhark-bench"
+alias futhark-c="dockerfuthark futhark-c"
+alias futhark-pkg="dockerfuthark futhark-pkg"
 ```
