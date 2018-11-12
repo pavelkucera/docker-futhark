@@ -1,6 +1,6 @@
 FROM haskell:8.4.3 AS build
 
-ARG VERSION=v0.7.1
+ARG VERSION=v0.7.4
 
 RUN apt-get update && \
 	apt-get install -y \
