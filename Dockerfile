@@ -15,6 +15,7 @@ RUN git checkout $VERSION
 # Build
 RUN stack setup
 RUN stack install happy
+RUN stack install alex
 RUN stack build
 RUN stack install
 
