@@ -19,9 +19,17 @@ RUN stack build
 RUN stack install
 
 
-# Copy just the compiled binaries
-FROM haskell:8.4.3
+# Image including just the binaries
+FROM debian:stretch-slim
+
+# Needed to have libgmp.so
+RUN apt-get update && \
+	apt-get install -y --no-install-recommends \
+		g++
+
+# Copy binaries
 COPY --from=build /root/.local/bin/futhark* /root/.local/bin/
+ENV PATH /root/.local/bin:$PATH
 
 # Run futharki
 CMD futharki
