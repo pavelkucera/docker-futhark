@@ -27,6 +27,13 @@ RUN apt-get update && \
 	apt-get install -y --no-install-recommends \
 		g++
 
+# Needed for futhark-pkg to work
+RUN apt-get install -y --no-install-recommends \
+		git \
+		ca-certificates \
+		build-essential \
+		netbase
+
 # Copy binaries
 COPY --from=build /root/.local/bin/futhark* /root/.local/bin/
 ENV PATH /root/.local/bin:$PATH
